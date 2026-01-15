@@ -13,5 +13,5 @@ use think\model\Pivot;
  */
 class SystemUserPost extends Pivot
 {
-    protected $table = 'sa_system_user_post';
+    protected $table = 'system_user_post';
 }

@@ -19,7 +19,7 @@ class SystemDept extends BaseModel
      */
     protected $pk = 'id';
 
-    protected $table = 'sa_system_dept';
+    protected $table = 'system_dept';
 
     /**
      * 权限范围
