@@ -24,7 +24,7 @@ class SystemRole extends BaseModel
      * 数据表完整名称
      * @var string
      */
-    protected $table = 'system_role';
+    protected $name = 'system_role';
 
     /**
      * 权限范围

@@ -19,7 +19,7 @@ class SystemConfig extends BaseModel
      */
     protected $pk = 'id';
 
-    protected $table = 'system_config';
+    protected $name = 'system_config';
 
     public function getConfigSelectDataAttr($value)
     {

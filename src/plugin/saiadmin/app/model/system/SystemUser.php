@@ -24,7 +24,7 @@ class SystemUser extends BaseModel
      * 数据表完整名称
      * @var string
      */
-    protected $table = 'system_user';
+    protected $name = 'system_user';
 
     /**
      * 获取器
