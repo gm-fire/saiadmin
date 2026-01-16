@@ -8,7 +8,7 @@ namespace plugin\saiadmin\app\model\tool;
 
 use plugin\saiadmin\basic\BaseModel;
 /**
- * 代码生成业务字段模型
+ * 管理员代码生成业务字段模型
  * Class GenerateColumns
  * @package app\model
  */
@@ -20,7 +20,7 @@ class GenerateColumns extends BaseModel
      */
     protected $pk = 'id';
 
-    protected $name = 'tool_generate_columns';
+    protected $name = 'admin_tool_generate_columns';
 
     public function getOptionsAttr($value)
     {

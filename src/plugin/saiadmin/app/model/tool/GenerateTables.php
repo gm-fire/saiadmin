@@ -8,7 +8,7 @@ namespace plugin\saiadmin\app\model\tool;
 
 use plugin\saiadmin\basic\BaseModel;
 /**
- * 代码生成业务模型
+ * 管理员代码生成业务模型
  * Class GenerateTables
  * @package app\model
  */
@@ -20,7 +20,7 @@ class GenerateTables extends BaseModel
      */
     protected $pk = 'id';
 
-    protected $name = 'tool_generate_tables';
+    protected $name = 'admin_tool_generate_tables';
 
     public function getOptionsAttr($value)
     {

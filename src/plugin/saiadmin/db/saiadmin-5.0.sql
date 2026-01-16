@@ -819,10 +819,10 @@ CREATE TABLE `__PREFIX__tool_crontab_log`  (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for __PREFIX__tool_generate_columns
+-- Table structure for __PREFIX__admin_tool_generate_columns
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__tool_generate_columns`;
-CREATE TABLE `__PREFIX__tool_generate_columns`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_tool_generate_columns`;
+CREATE TABLE `__PREFIX__admin_tool_generate_columns`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `table_id` int(11) UNSIGNED NULL DEFAULT NULL COMMENT '所属表ID',
   `column_name` varchar(200) NULL DEFAULT NULL COMMENT '字段名称',
@@ -852,14 +852,14 @@ CREATE TABLE `__PREFIX__tool_generate_columns`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 COMMENT = '代码生成业务字段表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__tool_generate_columns
+-- Records of __PREFIX__admin_tool_generate_columns
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for __PREFIX__tool_generate_tables
+-- Table structure for __PREFIX__admin_tool_generate_tables
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__tool_generate_tables`;
-CREATE TABLE `__PREFIX__tool_generate_tables`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_tool_generate_tables`;
+CREATE TABLE `__PREFIX__admin_tool_generate_tables`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `table_name` varchar(200) NULL DEFAULT NULL COMMENT '表名称',
   `table_comment` varchar(500) NULL DEFAULT NULL COMMENT '表注释',
@@ -892,7 +892,7 @@ CREATE TABLE `__PREFIX__tool_generate_tables`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 COMMENT = '代码生成业务表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__tool_generate_tables
+-- Records of __PREFIX__admin_tool_generate_tables
 -- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;
