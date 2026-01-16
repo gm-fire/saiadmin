@@ -9,7 +9,7 @@ namespace plugin\saiadmin\app\model\system;
 use plugin\saiadmin\basic\BaseModel;
 
 /**
- * 用户信息模型
+ * 管理员用户信息模型
  */
 class SystemUser extends BaseModel
 {
@@ -24,7 +24,7 @@ class SystemUser extends BaseModel
      * 数据表完整名称
      * @var string
      */
-    protected $name = 'system_user';
+    protected $name = 'admin_system_user';
 
     /**
      * 获取器
