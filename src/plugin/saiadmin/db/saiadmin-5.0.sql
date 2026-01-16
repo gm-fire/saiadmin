@@ -135,9 +135,9 @@ CREATE TABLE `__PREFIX__system_attachment`  (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for __PREFIX__system_config
+-- Table structure for __PREFIX__admin_system_config
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_config`;
+DROP TABLE IF EXISTS `__PREFIX__admin_system_config`;
 CREATE TABLE `__PREFIX__system_config`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '编号',
   `group_id` int(11) NULL DEFAULT NULL COMMENT '组id',
@@ -209,10 +209,10 @@ INSERT INTO `__PREFIX__system_config` VALUES (47, 2, 's3_use_path_style_endpoint
 INSERT INTO `__PREFIX__system_config` VALUES (48, 2, 's3_endpoint', '', 'endpoint', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `__PREFIX__system_config` VALUES (49, 2, 's3_acl', '', 'acl', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
 -- ----------------------------
--- Table structure for __PREFIX__system_config_group
+-- Table structure for __PREFIX__admin_system_config_group
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_config_group`;
-CREATE TABLE `__PREFIX__system_config_group`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_config_group`;
+CREATE TABLE `__PREFIX__admin_system_config_group`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `name` varchar(50) NULL DEFAULT NULL COMMENT '字典名称',
   `code` varchar(100) NULL DEFAULT NULL COMMENT '字典标示',
@@ -226,11 +226,11 @@ CREATE TABLE `__PREFIX__system_config_group`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 COMMENT = '参数配置分组表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_config_group
+-- Records of __PREFIX__admin_system_config_group
 -- ----------------------------
-INSERT INTO `__PREFIX__system_config_group` VALUES (1, '站点配置', 'site_config', '18', 1, 11, '2021-11-23 10:49:29', '2025-04-17 17:20:45', NULL);
-INSERT INTO `__PREFIX__system_config_group` VALUES (2, '上传配置', 'upload_config', NULL, 1, 1, '2021-11-23 10:49:29', '2021-11-23 10:49:29', NULL);
-INSERT INTO `__PREFIX__system_config_group` VALUES (3, '邮件服务', 'email_config', NULL, 1, 1, '2021-11-23 10:49:29', '2025-04-17 17:10:04', NULL);
+INSERT INTO `__PREFIX__admin_system_config_group` VALUES (1, '站点配置', 'site_config', '18', 1, 11, '2021-11-23 10:49:29', '2025-04-17 17:20:45', NULL);
+INSERT INTO `__PREFIX__admin_system_config_group` VALUES (2, '上传配置', 'upload_config', NULL, 1, 1, '2021-11-23 10:49:29', '2021-11-23 10:49:29', NULL);
+INSERT INTO `__PREFIX__admin_system_config_group` VALUES (3, '邮件服务', 'email_config', NULL, 1, 1, '2021-11-23 10:49:29', '2025-04-17 17:10:04', NULL);
 -- ----------------------------
 -- Table structure for __PREFIX__system_dept
 -- ----------------------------

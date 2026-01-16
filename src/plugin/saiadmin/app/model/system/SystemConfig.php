@@ -9,7 +9,7 @@ namespace plugin\saiadmin\app\model\system;
 use plugin\saiadmin\basic\BaseModel;
 
 /**
- * 参数配置模型
+ * 管理员参数配置模型
  */
 class SystemConfig extends BaseModel
 {
@@ -19,7 +19,7 @@ class SystemConfig extends BaseModel
      */
     protected $pk = 'id';
 
-    protected $name = 'system_config';
+    protected $name = 'admin_system_config';
 
     public function getConfigSelectDataAttr($value)
     {

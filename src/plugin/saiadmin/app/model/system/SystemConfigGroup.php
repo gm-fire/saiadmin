@@ -9,7 +9,7 @@ namespace plugin\saiadmin\app\model\system;
 use plugin\saiadmin\basic\BaseModel;
 
 /**
- * 参数配置分组模型
+ * 管理员参数配置分组模型
  */
 class SystemConfigGroup extends BaseModel
 {
@@ -19,7 +19,7 @@ class SystemConfigGroup extends BaseModel
      */
     protected $pk = 'id';
 
-    protected $name = 'system_config_group';
+    protected $name = 'admin_system_config_group';
 
     public function configs()
     {
