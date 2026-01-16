@@ -9,7 +9,7 @@ namespace plugin\saiadmin\app\model\system;
 use plugin\saiadmin\basic\BaseModel;
 
 /**
- * 角色模型
+ * 管理员角色模型
  */
 class SystemRole extends BaseModel
 {
@@ -24,7 +24,7 @@ class SystemRole extends BaseModel
      * 数据表完整名称
      * @var string
      */
-    protected $name = 'system_role';
+    protected $name = 'admin_system_role';
 
     /**
      * 权限范围

@@ -628,10 +628,10 @@ INSERT INTO `__PREFIX__system_post` VALUES (1, '司机岗', 'driver', 100, 1, ''
 INSERT INTO `__PREFIX__system_post` VALUES (2, '保安岗', 'security', 100, 1, NULL, 1, 1, '2025-04-27 23:34:06', '2025-04-28 11:14:44', NULL);
 
 -- ----------------------------
--- Table structure for __PREFIX__system_role
+-- Table structure for __PREFIX__admin_system_role
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_role`;
-CREATE TABLE `__PREFIX__system_role`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_role`;
+CREATE TABLE `__PREFIX__admin_system_role`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `parent_id` int(11) UNSIGNED NULL DEFAULT NULL COMMENT '父ID',
   `level` varchar(500) NULL DEFAULT NULL COMMENT '组级集合',
@@ -650,20 +650,20 @@ CREATE TABLE `__PREFIX__system_role`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 7 COMMENT = '角色信息表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_role
+-- Records of __PREFIX__admin_system_role
 -- ----------------------------
-INSERT INTO `__PREFIX__system_role` VALUES (1, 0, '0', '超级管理员（创始人', 'superAdmin', 1, 1, 100, '系统内置角色，不可删除', 1, 2, '2023-10-24 12:00:00', '2025-04-28 14:57:25', NULL);
-INSERT INTO `__PREFIX__system_role` VALUES (2, 1, '0,1', '管理员', 'manager', 1, 1, 100, '', 1, 1, '2023-10-24 12:00:00', '2025-04-27 23:30:59', NULL);
-INSERT INTO `__PREFIX__system_role` VALUES (3, 2, '0,1,2', '部门经理', 'deptManager', 1, 1, 100, '', 1, 1, '2025-04-27 23:31:44', '2025-04-28 15:47:33', NULL);
-INSERT INTO `__PREFIX__system_role` VALUES (4, 2, '0,1,2', '数据管理', 'dataManager', 1, 1, 100, '', 1, 1, '2025-04-27 23:32:23', '2025-04-27 23:32:27', NULL);
-INSERT INTO `__PREFIX__system_role` VALUES (5, 2, '0,1,2', '运维管理', 'operationManager', 1, 1, 100, '', 1, 2, '2025-04-27 23:33:13', '2025-04-28 14:56:03', NULL);
-INSERT INTO `__PREFIX__system_role` VALUES (6, 0, '0', '附加数据接口', 'additionData', 1, 1, 100, '', 1, 2, '2025-04-28 14:18:23', '2025-04-28 15:15:11', NULL);
+INSERT INTO `__PREFIX__admin_system_role` VALUES (1, 0, '0', '超级管理员（创始人', 'superAdmin', 1, 1, 100, '系统内置角色，不可删除', 1, 2, '2023-10-24 12:00:00', '2025-04-28 14:57:25', NULL);
+INSERT INTO `__PREFIX__admin_system_role` VALUES (2, 1, '0,1', '管理员', 'manager', 1, 1, 100, '', 1, 1, '2023-10-24 12:00:00', '2025-04-27 23:30:59', NULL);
+INSERT INTO `__PREFIX__admin_system_role` VALUES (3, 2, '0,1,2', '部门经理', 'deptManager', 1, 1, 100, '', 1, 1, '2025-04-27 23:31:44', '2025-04-28 15:47:33', NULL);
+INSERT INTO `__PREFIX__admin_system_role` VALUES (4, 2, '0,1,2', '数据管理', 'dataManager', 1, 1, 100, '', 1, 1, '2025-04-27 23:32:23', '2025-04-27 23:32:27', NULL);
+INSERT INTO `__PREFIX__admin_system_role` VALUES (5, 2, '0,1,2', '运维管理', 'operationManager', 1, 1, 100, '', 1, 2, '2025-04-27 23:33:13', '2025-04-28 14:56:03', NULL);
+INSERT INTO `__PREFIX__admin_system_role` VALUES (6, 0, '0', '附加数据接口', 'additionData', 1, 1, 100, '', 1, 2, '2025-04-28 14:18:23', '2025-04-28 15:15:11', NULL);
 
 -- ----------------------------
--- Table structure for __PREFIX__system_role_dept
+-- Table structure for __PREFIX__admin_system_role_dept
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_role_dept`;
-CREATE TABLE `__PREFIX__system_role_dept`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_role_dept`;
+CREATE TABLE `__PREFIX__admin_system_role_dept`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '编号',
   `role_id` int(11) UNSIGNED NOT NULL COMMENT '用户主键',
   `dept_id` int(11) UNSIGNED NOT NULL COMMENT '角色主键',
@@ -673,14 +673,14 @@ CREATE TABLE `__PREFIX__system_role_dept`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 COMMENT = '角色与部门关联表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_role_dept
+-- Records of __PREFIX__admin_system_role_dept
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for __PREFIX__system_role_menu
+-- Table structure for __PREFIX__admin_system_role_menu
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_role_menu`;
-CREATE TABLE `__PREFIX__system_role_menu`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_role_menu`;
+CREATE TABLE `__PREFIX__admin_system_role_menu`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '编号',
   `role_id` int(11) UNSIGNED NOT NULL COMMENT '角色主键',
   `menu_id` int(11) UNSIGNED NOT NULL COMMENT '菜单主键',
@@ -690,14 +690,14 @@ CREATE TABLE `__PREFIX__system_role_menu`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 COMMENT = '角色与菜单关联表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_role_menu
+-- Records of __PREFIX__admin_system_role_menu
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for __PREFIX__system_user
+-- Table structure for __PREFIX__admin_system_user
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_user`;
-CREATE TABLE `__PREFIX__system_user`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_user`;
+CREATE TABLE `__PREFIX__admin_system_user`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '用户ID,主键',
   `username` varchar(20) NOT NULL COMMENT '用户名',
   `password` varchar(100) NOT NULL COMMENT '密码',
@@ -725,17 +725,17 @@ CREATE TABLE `__PREFIX__system_user`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 COMMENT = '用户信息表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_user
+-- Records of __PREFIX__admin_system_user
 -- ----------------------------
-INSERT INTO `__PREFIX__system_user` VALUES (1, 'admin', '$2y$10$sY/4StKVV.N/8Ock8J8kdeIOK4jS4tAUoYjkzvB8Tzy0fLh.wA2KS', '100', '祭道之上', '13888888888', 'admin@admin.com', 'https://image.saithink.top/saiadmin/avatar.jpg', 'Today is a very good day！', 'statistics', 0, 1, '127.0.0.1', '2025-04-30 13:58:38', '{\"mode\":\"light\",\"tag\":true,\"menuCollapse\":false,\"menuWidth\":230,\"layout\":\"classic\",\"skin\":\"mine\",\"i18n\":false,\"language\":\"zh_CN\",\"animation\":\"ma-slide-down\",\"color\":\"#7166F0\",\"waterMark\":false,\"waterContent\":\"saiadmin\",\"ws\":false,\"round\":true}', NULL, 1, 1, '2024-01-20 16:02:23', '2025-04-30 13:58:38', NULL);
-INSERT INTO `__PREFIX__system_user` VALUES (2, 'test1', '$2y$10$Q70WC9RBqMSS72DmppsbIuQtyAydXSmeD.Ae6W8YhmE/w15uLLpiy', '100', '小小测试员', '15822222222', 'test1@saadmin.com', 'http://127.0.0.1:8787/storage/20250428/7ece61225ffe6cc374a58add56f0e8e80b03fa09.jpg', NULL, 'statistics', 2, 1, '127.0.0.1', '2025-04-29 17:04:09', 'null', 'test', 1, 1, '2024-07-31 09:34:31', '2025-04-30 13:58:56', NULL);
-INSERT INTO `__PREFIX__system_user` VALUES (3, 'test2', '$2y$10$Q70WC9RBqMSS72DmppsbIuQtyAydXSmeD.Ae6W8YhmE/w15uLLpiy', '100', '酱油党', '13977777777', 'test2@saadmin.com', 'http://127.0.0.1:8787/storage/20250315/0f15984b5dad6149dca2a6b8b64b83f76863788e.png', NULL, 'work', 4, 1, '127.0.0.1', '2025-04-28 15:37:30', 'null', 'test', 1, 2, '2024-07-31 09:34:31', '2025-04-28 15:37:30', NULL);
+INSERT INTO `__PREFIX__admin_system_user` VALUES (1, 'admin', '$2y$10$sY/4StKVV.N/8Ock8J8kdeIOK4jS4tAUoYjkzvB8Tzy0fLh.wA2KS', '100', '祭道之上', '13888888888', 'admin@admin.com', 'https://image.saithink.top/saiadmin/avatar.jpg', 'Today is a very good day！', 'statistics', 0, 1, '127.0.0.1', '2025-04-30 13:58:38', '{\"mode\":\"light\",\"tag\":true,\"menuCollapse\":false,\"menuWidth\":230,\"layout\":\"classic\",\"skin\":\"mine\",\"i18n\":false,\"language\":\"zh_CN\",\"animation\":\"ma-slide-down\",\"color\":\"#7166F0\",\"waterMark\":false,\"waterContent\":\"saiadmin\",\"ws\":false,\"round\":true}', NULL, 1, 1, '2024-01-20 16:02:23', '2025-04-30 13:58:38', NULL);
+INSERT INTO `__PREFIX__admin_system_user` VALUES (2, 'test1', '$2y$10$Q70WC9RBqMSS72DmppsbIuQtyAydXSmeD.Ae6W8YhmE/w15uLLpiy', '100', '小小测试员', '15822222222', 'test1@saadmin.com', 'http://127.0.0.1:8787/storage/20250428/7ece61225ffe6cc374a58add56f0e8e80b03fa09.jpg', NULL, 'statistics', 2, 1, '127.0.0.1', '2025-04-29 17:04:09', 'null', 'test', 1, 1, '2024-07-31 09:34:31', '2025-04-30 13:58:56', NULL);
+INSERT INTO `__PREFIX__admin_system_user` VALUES (3, 'test2', '$2y$10$Q70WC9RBqMSS72DmppsbIuQtyAydXSmeD.Ae6W8YhmE/w15uLLpiy', '100', '酱油党', '13977777777', 'test2@saadmin.com', 'http://127.0.0.1:8787/storage/20250315/0f15984b5dad6149dca2a6b8b64b83f76863788e.png', NULL, 'work', 4, 1, '127.0.0.1', '2025-04-28 15:37:30', 'null', 'test', 1, 2, '2024-07-31 09:34:31', '2025-04-28 15:37:30', NULL);
 
 -- ----------------------------
--- Table structure for __PREFIX__system_user_post
+-- Table structure for __PREFIX__admin_system_user_post
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_user_post`;
-CREATE TABLE `__PREFIX__system_user_post`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_user_post`;
+CREATE TABLE `__PREFIX__admin_system_user_post`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `user_id` int(11) UNSIGNED NOT NULL COMMENT '用户主键',
   `post_id` int(11) UNSIGNED NOT NULL COMMENT '岗位主键',
@@ -749,10 +749,10 @@ CREATE TABLE `__PREFIX__system_user_post`  (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for __PREFIX__system_user_role
+-- Table structure for __PREFIX__admin_system_user_role
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_user_role`;
-CREATE TABLE `__PREFIX__system_user_role`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_user_role`;
+CREATE TABLE `__PREFIX__admin_system_user_role`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '编号',
   `user_id` int(11) UNSIGNED NOT NULL COMMENT '用户主键',
   `role_id` int(11) UNSIGNED NOT NULL COMMENT '角色主键',
@@ -762,9 +762,9 @@ CREATE TABLE `__PREFIX__system_user_role`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 COMMENT = '用户与角色关联表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_user_role
+-- Records of __PREFIX__admin_system_user_role
 -- ----------------------------
-INSERT INTO `__PREFIX__system_user_role` VALUES (1, 1, 1);
+INSERT INTO `__PREFIX__admin_system_user_role` VALUES (1, 1, 1);
 
 -- ----------------------------
 -- Table structure for __PREFIX__tool_crontab

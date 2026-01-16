@@ -9,9 +9,9 @@ namespace plugin\saiadmin\app\model\system;
 use think\model\Pivot;
 
 /**
- * 角色菜单关联模型
+ * 管理员角色菜单关联模型
  */
 class SystemRoleMenu extends Pivot
 {
-    protected $name = 'system_role_menu';
+    protected $name = 'admin_system_role_menu';
 }

@@ -9,9 +9,9 @@ namespace plugin\saiadmin\app\model\system;
 use think\model\Pivot;
 
 /**
- * 角色部门关联模型
+ * 管理员角色部门关联模型
  */
 class SystemRoleDept extends Pivot
 {
-    protected $table = 'system_role_dept';
+    protected $table = 'admin_system_role_dept';
 }
