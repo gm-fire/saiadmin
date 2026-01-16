@@ -9,9 +9,9 @@ namespace plugin\saiadmin\app\model\system;
 use think\model\Pivot;
 
 /**
- * 部门领导关联模型
+ * 管理员部门领导关联模型
  */
 class SystemDeptLeader extends Pivot
 {
-    protected $table = 'system_dept_leader';
+    protected $name = 'admin_system_dept_leader';
 }

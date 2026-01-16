@@ -264,10 +264,10 @@ INSERT INTO `__PREFIX__system_dept` VALUES (6, 3, '0,1,3', '研发部门', 1, 1,
 INSERT INTO `__PREFIX__system_dept` VALUES (7, 3, '0,1,3', '市场部门', 1, 1, NULL, 1, 1, '2023-10-24 12:00:00', '2025-03-26 23:30:10', NULL);
 
 -- ----------------------------
--- Table structure for __PREFIX__system_dept_leader
+-- Table structure for __PREFIX__admin_system_dept_leader
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_dept_leader`;
-CREATE TABLE `__PREFIX__system_dept_leader`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_dept_leader`;
+CREATE TABLE `__PREFIX__admin_system_dept_leader`  (
   `leader_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '编号',
   `dept_id` int(11) UNSIGNED NOT NULL COMMENT '部门主键',
   `user_id` int(11) UNSIGNED NOT NULL COMMENT '角色主键',
@@ -277,7 +277,7 @@ CREATE TABLE `__PREFIX__system_dept_leader`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 COMMENT = '部门领导关联表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_dept_leader
+-- Records of __PREFIX__admin_system_dept_leader
 -- ----------------------------
 
 -- ----------------------------
