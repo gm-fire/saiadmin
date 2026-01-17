@@ -9,12 +9,12 @@ namespace plugin\saiadmin\app\model\system;
 use plugin\saiadmin\basic\BaseModel;
 
 /**
- * 菜单模型
+ * 管理员菜单模型
  */
 class SystemMenu extends BaseModel
 {
     // 完整数据库表名称
-    protected $name = 'system_menu';
+    protected $name = 'admin_system_menu';
     // 主键
     protected $pk = 'id';
 

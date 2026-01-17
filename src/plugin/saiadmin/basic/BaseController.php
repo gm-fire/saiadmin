@@ -75,6 +75,9 @@ class BaseController extends OpenController
             'read' => 'get',
             'changestatus' => 'post',
             'destroy' => 'delete',
+            'recycle' => 'get',
+            'recovery' => 'post',
+            'realdestroy' => 'delete',
             'import' => 'post',
             'export' => 'post',
         ];
@@ -179,6 +182,55 @@ class BaseController extends OpenController
             return $this->success($data);
         } else {
             return $this->fail('未查找到信息');
+        }
+    }
+
+    /**
+     * 回收站数据
+     * @param Request $request
+     * @return Response
+     */
+    public function recycle(Request $request): Response
+    {
+        $where = $request->more([
+            ['create_time', ''],
+        ]);
+        $query = $this->logic->recycle()->search($where);
+        $data = $this->logic->getList($query);
+        return $this->success($data);
+    }
+
+    /**
+     * 恢复数据
+     * @param Request $request
+     * @return Response
+     */
+    public function recovery(Request $request): Response
+    {
+        $ids = $request->input('ids', '');
+        if (!empty($ids)) {
+            $this->logic->restore($ids);
+            $this->afterChange('recovery', $ids);
+            return $this->success('恢复成功');
+        } else {
+            return $this->fail('参数错误，请检查');
+        }
+    }
+
+    /**
+     * 数据销毁-真实删除
+     * @param Request $request
+     * @return Response
+     */
+    public function realDestroy(Request $request): Response
+    {
+        $ids = $request->input('ids', '');
+        if (!empty($ids)) {
+            $this->logic->destroy($ids, true);
+            $this->afterChange('realDestroy', $ids);
+            return $this->success('操作成功');
+        } else {
+            return $this->fail('参数错误，请检查');
         }
     }
 

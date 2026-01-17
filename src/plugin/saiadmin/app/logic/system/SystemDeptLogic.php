@@ -59,7 +59,7 @@ class SystemDeptLogic extends BaseLogic
     /**
      * 数据删除
      */
-    public function destroy($ids)
+    public function destroy($ids, $force = false)
     {
         $num = $this->model->where('parent_id', 'in', $ids)->count();
         if ($num > 0) {
@@ -69,7 +69,7 @@ class SystemDeptLogic extends BaseLogic
             if ($count > 0) {
                 throw new ApiException('该部门下存在用户，请先删除或者转移用户');
             }
-            return $this->model->destroy($ids);
+            return parent::destroy($ids, $force);
         }
     }
 

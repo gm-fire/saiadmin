@@ -47,12 +47,12 @@ class SystemDictTypeLogic extends BaseLogic
     /**
      * 数据删除
      */
-    public function destroy($ids)
+    public function destroy($ids, $force = false)
     {
         Db::startTrans();
         try {
             // 删除数据字典类型
-            $result = $this->model->destroy($ids);
+            $result = parent::destroy($ids, $force);
             // 删除数据字典数据
             $typeIds = SystemDictData::where('type_id', 'in', $ids)->column('id');
             SystemDictData::destroy($typeIds);

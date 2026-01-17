@@ -30,6 +30,9 @@ class SystemLoginLogLogic extends BaseLogic
      */
     public function loginChart(): array
     {
+        // 获取表名（包含前缀）
+        $tableName = (new SystemLoginLog())->getTable();
+        
         $sql = "
             SELECT
                 d.date AS login_date,
@@ -40,7 +43,7 @@ class SystemLoginLogLogic extends BaseLogic
                        UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6
                        UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) a
                  ) d
-            LEFT JOIN system_login_log l
+            LEFT JOIN {$tableName} l
                 ON DATE(l.login_time) = d.date
             GROUP BY d.date
             ORDER BY d.date ASC;

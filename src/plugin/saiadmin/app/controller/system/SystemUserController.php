@@ -135,7 +135,7 @@ class SystemUserController extends BaseController
         if ($id == 1) {
             return $this->fail('超级管理员不允许重置密码');
         }
-        $data = ['password' => password_hash('sai123456', PASSWORD_DEFAULT)];
+        $data = ['password' => password_hash('123456', PASSWORD_DEFAULT)];
         $this->logic->authEdit($id, $data);
         UserInfoCache::clearUserInfo($id);
         return $this->success('操作成功');

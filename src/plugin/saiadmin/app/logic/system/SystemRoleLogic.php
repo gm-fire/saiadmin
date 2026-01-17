@@ -70,7 +70,7 @@ class SystemRoleLogic extends BaseLogic
     /**
      * 删除数据
      */
-    public function destroy($ids)
+    public function destroy($ids, $force = false)
     {
         // 判断是否所属角色下的角色
         if ($this->adminInfo['id'] > 1) {
@@ -88,7 +88,7 @@ class SystemRoleLogic extends BaseLogic
         if ($num > 0) {
             throw new ApiException('该角色下存在子角色，请先删除子角色');
         } else {
-            return $this->model->destroy($ids);
+            return parent::destroy($ids, $force);
         }
     }
 

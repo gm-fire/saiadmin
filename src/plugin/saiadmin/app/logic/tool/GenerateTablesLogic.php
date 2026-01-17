@@ -39,10 +39,10 @@ class GenerateTablesLogic extends BaseLogic
      * 删除表和字段信息
      * @param $ids
      */
-    public function destroy($ids)
+    public function destroy($ids, $force = false)
     {
-        $this->transaction(function () use ($ids) {
-            parent::destroy($ids);
+        $this->transaction(function () use ($ids, $force) {
+            parent::destroy($ids, $force);
             GenerateColumns::destroy(function ($query) use ($ids) {
                 $query->where('table_id', 'in', $ids);
             });

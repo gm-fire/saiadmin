@@ -10,7 +10,7 @@ namespace plugin\saiadmin\app\model\system;
 use plugin\saiadmin\basic\BaseModel;
 
 /**
- * 登录日志模型
+ * 管理员登录日志模型
  */
 class SystemLoginLog extends BaseModel
 {
@@ -20,7 +20,7 @@ class SystemLoginLog extends BaseModel
      */
     protected $pk = 'id';
 
-    protected $name = 'system_login_log';
+    protected $name = 'admin_system_login_log';
 
     /**
      * 时间范围搜索

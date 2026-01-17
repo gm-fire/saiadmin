@@ -137,9 +137,36 @@ class BaseLogic
      * 删除数据
      * @param $ids
      */
-    public function destroy($ids)
+    public function destroy($ids, $force = false)
     {
-        $this->model->destroy($ids);
+        if ($force) {
+            $this->model->withTrashed()->where($this->model->getPk(), 'in', $ids)->force(true)->delete();
+        } else {
+            $this->model->destroy($ids);
+        }
+    }
+
+    /**
+     * 获取回收站模型
+     * @return mixed
+     */
+    public function recycle(): BaseLogic
+    {
+        $this->model = $this->model->onlyTrashed();
+        return $this;
+    }
+
+    /**
+     * 恢复回收站数据
+     * @param $ids
+     * @return void
+     */
+    public function restore($ids)
+    {
+        $list = $this->model->onlyTrashed()->where($this->model->getPk(), 'in', $ids)->select();
+        foreach ($list as $item) {
+            $item->restore();
+        }
     }
 
     /**

@@ -29,7 +29,7 @@ class SystemConfigGroupLogic extends BaseLogic
     /**
      * 删除配置信息
      */
-    public function destroy($ids)
+    public function destroy($ids, $force = false)
     {
         $model = $this->model->where('id', $ids)->findOrEmpty();
         if ($model->isEmpty()) {

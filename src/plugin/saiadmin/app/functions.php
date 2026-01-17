@@ -45,6 +45,9 @@ if (!function_exists('fastRoute')) {
         if (method_exists($controller, 'read')) Route::get("/$name/read", [$controller, 'read']);
         if (method_exists($controller, 'changeStatus')) Route::post("/$name/changeStatus", [$controller, 'changeStatus']);
         if (method_exists($controller, 'destroy')) Route::delete("/$name/destroy", [$controller, 'destroy']);
+        if (method_exists($controller, 'recycle')) Route::get("/$name/recycle", [$controller, 'recycle']);
+        if (method_exists($controller, 'realDestroy')) Route::delete("/$name/realDestroy", [$controller, 'realDestroy']);
+        if (method_exists($controller, 'recovery')) Route::post("/$name/recovery", [$controller, 'recovery']);
         if (method_exists($controller, 'import')) Route::post("/$name/import", [$controller, 'import']);
         if (method_exists($controller, 'export')) Route::post("/$name/export", [$controller, 'export']);
     }

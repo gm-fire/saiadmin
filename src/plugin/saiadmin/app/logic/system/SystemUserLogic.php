@@ -149,7 +149,7 @@ class SystemUserLogic extends BaseLogic
      * 删除数据
      * @param $ids
      */
-    public function destroy($ids)
+    public function destroy($ids, $force = false)
     {
         if (is_array($ids)) {
             if (count($ids) > 1) {
@@ -172,7 +172,7 @@ class SystemUserLogic extends BaseLogic
         UserInfoCache::clearUserInfo($ids);
         UserAuthCache::clearUserAuth($ids);
         UserMenuCache::clearUserMenu($ids);
-        parent::destroy($ids);
+        parent::destroy($ids, $force);
     }
 
     /**
