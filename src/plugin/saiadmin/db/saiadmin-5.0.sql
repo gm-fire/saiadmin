@@ -138,7 +138,7 @@ CREATE TABLE `__PREFIX__system_attachment`  (
 -- Table structure for __PREFIX__admin_system_config
 -- ----------------------------
 DROP TABLE IF EXISTS `__PREFIX__admin_system_config`;
-CREATE TABLE `__PREFIX__system_config`  (
+CREATE TABLE `__PREFIX__admin_system_config`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '编号',
   `group_id` int(11) NULL DEFAULT NULL COMMENT '组id',
   `key` varchar(32) NOT NULL COMMENT '配置键名',
@@ -158,56 +158,56 @@ CREATE TABLE `__PREFIX__system_config`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 50 COMMENT = '参数配置信息表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_config
+-- Records of __PREFIX__admin_system_config
 -- ----------------------------
-INSERT INTO `__PREFIX__system_config` VALUES (1, 1, 'site_copyright', 'Copyright © 2024 saithink', '版权信息', 'textarea', NULL, 96, '', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (2, 1, 'site_desc', '基于vue3 + webman 的极速开发框架', '网站描述', 'textarea', NULL, 97, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (3, 1, 'site_keywords', '后台管理系统', '网站关键字', 'input', NULL, 98, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (4, 1, 'site_name', 'SaiAdmin', '网站名称', 'input', NULL, 99, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (5, 1, 'site_record_number', '', '网站备案号', 'input', NULL, 95, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (6, 2, 'upload_allow_file', 'txt,doc,docx,xls,xlsx,ppt,pptx,rar,zip,7z,gz,pdf,wps,md', '文件类型', 'input', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (7, 2, 'upload_allow_image', 'jpg,jpeg,png,gif,svg,bmp', '图片类型', 'input', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (8, 2, 'upload_mode', '1', '上传模式', 'select', '[{\"label\":\"本地上传\",\"value\":\"1\"},{\"label\":\"阿里云OSS\",\"value\":\"2\"},{\"label\":\"七牛云\",\"value\":\"3\"},{\"label\":\"腾讯云COS\",\"value\":\"4\"},{\"label\":\"亚马逊S3\",\"value\":\"5\"}]', 99, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (10, 2, 'upload_size', '5242880', '上传大小', 'input', NULL, 88, '单位Byte,1MB=1024*1024Byte', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (11, 2, 'local_root', 'public/storage/', '本地存储路径', 'input', NULL, 0, '本地存储文件路径', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (12, 2, 'local_domain', 'http://127.0.0.1:8787', '本地存储域名', 'input', NULL, 0, 'http://127.0.0.1:8787', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (13, 2, 'local_uri', '/storage/', '本地访问路径', 'input', NULL, 0, '访问是通过domain + uri', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (14, 2, 'qiniu_accessKey', '', '七牛key', 'input', NULL, 0, '七牛云存储secretId', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (15, 2, 'qiniu_secretKey', '', '七牛secret', 'input', NULL, 0, '七牛云存储secretKey', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (16, 2, 'qiniu_bucket', '', '七牛bucket', 'input', NULL, 0, '七牛云存储bucket', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (17, 2, 'qiniu_dirname', '', '七牛dirname', 'input', NULL, 0, '七牛云存储dirname', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (18, 2, 'qiniu_domain', '', '七牛domain', 'input', NULL, 0, '七牛云存储domain', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (19, 2, 'cos_secretId', '', '腾讯Id', 'input', NULL, 0, '腾讯云存储secretId', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (20, 2, 'cos_secretKey', '', '腾讯key', 'input', NULL, 0, '腾讯云secretKey', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (21, 2, 'cos_bucket', '', '腾讯bucket', 'input', NULL, 0, '腾讯云存储bucket', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (22, 2, 'cos_dirname', '', '腾讯dirname', 'input', NULL, 0, '腾讯云存储dirname', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (23, 2, 'cos_domain', '', '腾讯domain', 'input', NULL, 0, '腾讯云存储domain', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (24, 2, 'cos_region', '', '腾讯region', 'input', NULL, 0, '腾讯云存储region', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (25, 2, 'oss_accessKeyId', '', '阿里Id', 'input', NULL, 0, '阿里云存储accessKeyId', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (26, 2, 'oss_accessKeySecret', '', '阿里Secret', 'input', NULL, 0, '阿里云存储accessKeySecret', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (27, 2, 'oss_bucket', '', '阿里bucket', 'input', NULL, 0, '阿里云存储bucket', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (28, 2, 'oss_dirname', '', '阿里dirname', 'input', NULL, 0, '阿里云存储dirname', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (29, 2, 'oss_domain', '', '阿里domain', 'input', NULL, 0, '阿里云存储domain', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (30, 2, 'oss_endpoint', '', '阿里endpoint', 'input', NULL, 0, '阿里云存储endpoint', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (31, 3, 'Host', 'smtp.qq.com', 'SMTP服务器', 'input', '', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (32, 3, 'Port', '465', 'SMTP端口', 'input', '', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (33, 3, 'Username', '', 'SMTP用户名', 'input', '', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (34, 3, 'Password', '', 'SMTP密码', 'input', '', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (35, 3, 'SMTPSecure', 'ssl', 'SMTP验证方式', 'radio', '[\r\n    {\"label\":\"ssl\",\"value\":\"ssl\"},\r\n    {\"label\":\"tsl\",\"value\":\"tsl\"}\r\n]', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (36, 3, 'From', '', '默认发件人', 'input', '', 100, '默认发件的邮箱地址', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (37, 3, 'FromName', '', '默认发件名称', 'input', '', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (38, 3, 'CharSet', 'UTF-8', '编码', 'input', '', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (39, 3, 'SMTPDebug', '0', '调试模式', 'radio', '[\r\n    {\"label\":\"关闭\",\"value\":\"0\"},\r\n    {\"label\":\"client\",\"value\":\"1\"},\r\n    {\"label\":\"server\",\"value\":\"2\"}\r\n]', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (40, 2, 's3_key', '', 'key', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (41, 2, 's3_secret', '', 'secret', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (42, 2, 's3_bucket', '', 'bucket', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (43, 2, 's3_dirname', '', 'dirname', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (44, 2, 's3_domain', '', 'domain', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (45, 2, 's3_region', '', 'region', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (46, 2, 's3_version', '', 'version', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (47, 2, 's3_use_path_style_endpoint', '', 'path_style_endpoint', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (48, 2, 's3_endpoint', '', 'endpoint', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `__PREFIX__system_config` VALUES (49, 2, 's3_acl', '', 'acl', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (1, 1, 'site_copyright', 'Copyright © 2024 saithink', '版权信息', 'textarea', NULL, 96, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (2, 1, 'site_desc', '基于vue3 + webman 的极速开发框架', '网站描述', 'textarea', NULL, 97, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (3, 1, 'site_keywords', '后台管理系统', '网站关键字', 'input', NULL, 98, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (4, 1, 'site_name', 'SaiAdmin', '网站名称', 'input', NULL, 99, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (5, 1, 'site_record_number', '', '网站备案号', 'input', NULL, 95, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (6, 2, 'upload_allow_file', 'txt,doc,docx,xls,xlsx,ppt,pptx,rar,zip,7z,gz,pdf,wps,md', '文件类型', 'input', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (7, 2, 'upload_allow_image', 'jpg,jpeg,png,gif,svg,bmp', '图片类型', 'input', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (8, 2, 'upload_mode', '1', '上传模式', 'select', '[{\"label\":\"本地上传\",\"value\":\"1\"},{\"label\":\"阿里云OSS\",\"value\":\"2\"},{\"label\":\"七牛云\",\"value\":\"3\"},{\"label\":\"腾讯云COS\",\"value\":\"4\"},{\"label\":\"亚马逊S3\",\"value\":\"5\"}]', 99, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (10, 2, 'upload_size', '5242880', '上传大小', 'input', NULL, 88, '单位Byte,1MB=1024*1024Byte', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (11, 2, 'local_root', 'public/storage/', '本地存储路径', 'input', NULL, 0, '本地存储文件路径', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (12, 2, 'local_domain', 'http://127.0.0.1:8787', '本地存储域名', 'input', NULL, 0, 'http://127.0.0.1:8787', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (13, 2, 'local_uri', '/storage/', '本地访问路径', 'input', NULL, 0, '访问是通过domain + uri', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (14, 2, 'qiniu_accessKey', '', '七牛key', 'input', NULL, 0, '七牛云存储secretId', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (15, 2, 'qiniu_secretKey', '', '七牛secret', 'input', NULL, 0, '七牛云存储secretKey', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (16, 2, 'qiniu_bucket', '', '七牛bucket', 'input', NULL, 0, '七牛云存储bucket', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (17, 2, 'qiniu_dirname', '', '七牛dirname', 'input', NULL, 0, '七牛云存储dirname', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (18, 2, 'qiniu_domain', '', '七牛domain', 'input', NULL, 0, '七牛云存储domain', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (19, 2, 'cos_secretId', '', '腾讯Id', 'input', NULL, 0, '腾讯云存储secretId', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (20, 2, 'cos_secretKey', '', '腾讯key', 'input', NULL, 0, '腾讯云secretKey', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (21, 2, 'cos_bucket', '', '腾讯bucket', 'input', NULL, 0, '腾讯云存储bucket', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (22, 2, 'cos_dirname', '', '腾讯dirname', 'input', NULL, 0, '腾讯云存储dirname', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (23, 2, 'cos_domain', '', '腾讯domain', 'input', NULL, 0, '腾讯云存储domain', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (24, 2, 'cos_region', '', '腾讯region', 'input', NULL, 0, '腾讯云存储region', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (25, 2, 'oss_accessKeyId', '', '阿里Id', 'input', NULL, 0, '阿里云存储accessKeyId', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (26, 2, 'oss_accessKeySecret', '', '阿里Secret', 'input', NULL, 0, '阿里云存储accessKeySecret', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (27, 2, 'oss_bucket', '', '阿里bucket', 'input', NULL, 0, '阿里云存储bucket', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (28, 2, 'oss_dirname', '', '阿里dirname', 'input', NULL, 0, '阿里云存储dirname', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (29, 2, 'oss_domain', '', '阿里domain', 'input', NULL, 0, '阿里云存储domain', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (30, 2, 'oss_endpoint', '', '阿里endpoint', 'input', NULL, 0, '阿里云存储endpoint', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (31, 3, 'Host', 'smtp.qq.com', 'SMTP服务器', 'input', '', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (32, 3, 'Port', '465', 'SMTP端口', 'input', '', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (33, 3, 'Username', '', 'SMTP用户名', 'input', '', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (34, 3, 'Password', '', 'SMTP密码', 'input', '', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (35, 3, 'SMTPSecure', 'ssl', 'SMTP验证方式', 'radio', '[\r\n    {\"label\":\"ssl\",\"value\":\"ssl\"},\r\n    {\"label\":\"tsl\",\"value\":\"tsl\"}\r\n]', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (36, 3, 'From', '', '默认发件人', 'input', '', 100, '默认发件的邮箱地址', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (37, 3, 'FromName', '', '默认发件名称', 'input', '', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (38, 3, 'CharSet', 'UTF-8', '编码', 'input', '', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (39, 3, 'SMTPDebug', '0', '调试模式', 'radio', '[\r\n    {\"label\":\"关闭\",\"value\":\"0\"},\r\n    {\"label\":\"client\",\"value\":\"1\"},\r\n    {\"label\":\"server\",\"value\":\"2\"}\r\n]', 100, '', NULL, NULL, NULL, '2025-04-17 17:10:04', NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (40, 2, 's3_key', '', 'key', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (41, 2, 's3_secret', '', 'secret', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (42, 2, 's3_bucket', '', 'bucket', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (43, 2, 's3_dirname', '', 'dirname', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (44, 2, 's3_domain', '', 'domain', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (45, 2, 's3_region', '', 'region', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (46, 2, 's3_version', '', 'version', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (47, 2, 's3_use_path_style_endpoint', '', 'path_style_endpoint', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (48, 2, 's3_endpoint', '', 'endpoint', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `__PREFIX__admin_system_config` VALUES (49, 2, 's3_acl', '', 'acl', 'input', '', 0, '', NULL, NULL, NULL, NULL, NULL);
 -- ----------------------------
 -- Table structure for __PREFIX__admin_system_config_group
 -- ----------------------------
@@ -234,8 +234,8 @@ INSERT INTO `__PREFIX__admin_system_config_group` VALUES (3, '邮件服务', 'em
 -- ----------------------------
 -- Table structure for __PREFIX__system_dept
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_dept`;
-CREATE TABLE `__PREFIX__system_dept`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_dept`;
+CREATE TABLE `__PREFIX__admin_system_dept`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `parent_id` int(11) UNSIGNED NULL DEFAULT NULL COMMENT '父ID',
   `level` varchar(500) NULL DEFAULT NULL COMMENT '组级集合',
@@ -253,15 +253,15 @@ CREATE TABLE `__PREFIX__system_dept`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 8 COMMENT = '部门信息表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_dept
+-- Records of __PREFIX__admin_system_dept
 -- ----------------------------
-INSERT INTO `__PREFIX__system_dept` VALUES (1, 0, '0', '赛弟科技', 1, 1, NULL, 1, 1, '2023-10-24 12:00:00', '2023-10-24 12:00:00', NULL);
-INSERT INTO `__PREFIX__system_dept` VALUES (2, 1, '0,1', '青岛分公司', 1, 1, NULL, 1, 2, '2023-10-24 12:00:00', '2025-04-28 15:31:12', NULL);
-INSERT INTO `__PREFIX__system_dept` VALUES (3, 1, '0,1', '洛阳分公司', 1, 1, NULL, 1, 1, '2023-10-24 12:00:00', '2025-04-10 17:45:22', NULL);
-INSERT INTO `__PREFIX__system_dept` VALUES (4, 2, '0,1,2', '市场部门', 1, 1, NULL, 1, 2, '2023-10-24 12:00:00', '2025-04-28 15:38:29', NULL);
-INSERT INTO `__PREFIX__system_dept` VALUES (5, 2, '0,1,2', '财务部门', 1, 1, NULL, 1, 1, '2023-10-24 12:00:00', '2023-10-24 12:00:00', NULL);
-INSERT INTO `__PREFIX__system_dept` VALUES (6, 3, '0,1,3', '研发部门', 1, 1, NULL, 1, 1, '2023-10-24 12:00:00', '2023-10-24 12:00:00', NULL);
-INSERT INTO `__PREFIX__system_dept` VALUES (7, 3, '0,1,3', '市场部门', 1, 1, NULL, 1, 1, '2023-10-24 12:00:00', '2025-03-26 23:30:10', NULL);
+INSERT INTO `__PREFIX__admin_system_dept` VALUES (1, 0, '0', '赛弟科技', 1, 1, NULL, 1, 1, '2023-10-24 12:00:00', '2023-10-24 12:00:00', NULL);
+INSERT INTO `__PREFIX__admin_system_dept` VALUES (2, 1, '0,1', '青岛分公司', 1, 1, NULL, 1, 2, '2023-10-24 12:00:00', '2025-04-28 15:31:12', NULL);
+INSERT INTO `__PREFIX__admin_system_dept` VALUES (3, 1, '0,1', '洛阳分公司', 1, 1, NULL, 1, 1, '2023-10-24 12:00:00', '2025-04-10 17:45:22', NULL);
+INSERT INTO `__PREFIX__admin_system_dept` VALUES (4, 2, '0,1,2', '市场部门', 1, 1, NULL, 1, 2, '2023-10-24 12:00:00', '2025-04-28 15:38:29', NULL);
+INSERT INTO `__PREFIX__admin_system_dept` VALUES (5, 2, '0,1,2', '财务部门', 1, 1, NULL, 1, 1, '2023-10-24 12:00:00', '2023-10-24 12:00:00', NULL);
+INSERT INTO `__PREFIX__admin_system_dept` VALUES (6, 3, '0,1,3', '研发部门', 1, 1, NULL, 1, 1, '2023-10-24 12:00:00', '2023-10-24 12:00:00', NULL);
+INSERT INTO `__PREFIX__admin_system_dept` VALUES (7, 3, '0,1,3', '市场部门', 1, 1, NULL, 1, 1, '2023-10-24 12:00:00', '2025-03-26 23:30:10', NULL);
 
 -- ----------------------------
 -- Table structure for __PREFIX__admin_system_dept_leader
@@ -281,10 +281,10 @@ CREATE TABLE `__PREFIX__admin_system_dept_leader`  (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for __PREFIX__system_dict_data
+-- Table structure for __PREFIX__admin_system_dict_data
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_dict_data`;
-CREATE TABLE `__PREFIX__system_dict_data`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_dict_data`;
+CREATE TABLE `__PREFIX__admin_system_dict_data`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `type_id` int(11) UNSIGNED NULL DEFAULT NULL COMMENT '字典类型ID',
   `label` varchar(50) NULL DEFAULT NULL COMMENT '字典标签',
@@ -304,39 +304,39 @@ CREATE TABLE `__PREFIX__system_dict_data`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 30 COMMENT = '字典数据表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_dict_data
+-- Records of __PREFIX__admin_system_dict_data
 -- ----------------------------
-INSERT INTO `__PREFIX__system_dict_data` VALUES (2, 2, '本地存储', '1', 'green', 'upload_mode', 99, 1, NULL, 1, 2, '2021-06-27 13:33:43', '2025-04-28 21:23:38', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (3, 2, '阿里云OSS', '2', 'orange', 'upload_mode', 98, 1, NULL, 1, 2, '2021-06-27 13:33:55', '2025-04-28 21:25:13', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (4, 2, '七牛云', '3', 'cyan', 'upload_mode', 97, 1, NULL, 1, 1, '2021-06-27 13:34:07', '2025-03-28 19:35:25', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (5, 2, '腾讯云COS', '4', 'blue', 'upload_mode', 96, 1, NULL, 1, 1, '2021-06-27 13:34:19', '2025-03-28 19:35:25', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (6, 2, '亚马逊S3', '5', 'red', 'upload_mode', 95, 1, '', 1, 1, '2021-06-27 13:34:19', '2025-04-04 23:05:31', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (7, 3, '正常', '1', 'green', 'data_status', 0, 1, '1为正常', 1, 1, '2021-06-27 13:36:51', '2021-06-27 13:37:01', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (8, 3, '停用', '2', 'red', 'data_status', 0, 1, '2为停用', 1, 1, '2021-06-27 13:37:10', '2021-06-27 13:37:10', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (9, 4, '统计页面', 'statistics', 'green', 'dashboard', 0, 1, '管理员用', 1, 1, '2021-08-09 12:53:53', '2023-11-16 11:39:17', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (10, 4, '工作台', 'work', 'orange', 'dashboard', 0, 1, '员工使用', 1, 1, '2021-08-09 12:54:18', '2021-08-09 12:54:18', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (11, 5, '男', '1', 'green', 'gender', 0, 1, NULL, 1, 1, '2021-08-09 12:55:00', '2025-04-04 23:05:52', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (12, 5, '女', '2', 'red', 'gender', 0, 1, NULL, 1, 1, '2021-08-09 12:55:08', '2025-04-04 23:05:52', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (13, 5, '未知', '3', 'orange', 'gender', 0, 1, NULL, 1, 1, '2021-08-09 12:55:16', '2025-04-04 23:05:52', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (14, 7, '通知', '1', 'green', 'backend_notice_type', 2, 1, NULL, 1, 1, '2021-11-11 17:29:27', '2021-11-11 17:30:51', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (15, 7, '公告', '2', 'red', 'backend_notice_type', 1, 1, NULL, 1, 1, '2021-11-11 17:31:42', '2021-11-11 17:31:42', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (16, 12, '图片', 'image', 'green', 'attachment_type', 10, 1, NULL, 1, 1, '2022-03-17 14:49:59', '2022-03-17 14:49:59', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (17, 12, '文档', 'text', 'blue', 'attachment_type', 9, 1, NULL, 1, 1, '2022-03-17 14:50:20', '2022-03-17 14:50:49', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (18, 12, '音频', 'audio', 'cyan', 'attachment_type', 8, 1, NULL, 1, 1, '2022-03-17 14:50:37', '2022-03-17 14:50:52', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (19, 12, '视频', 'video', 'red', 'attachment_type', 7, 1, NULL, 1, 1, '2022-03-17 14:50:45', '2022-03-17 14:50:57', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (20, 12, '应用程序', 'application', 'orange', 'attachment_type', 6, 1, NULL, 1, 1, '2022-03-17 14:50:52', '2022-03-17 14:50:59', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (21, 13, '菜单', 'M', 'green', 'menu_type', 100, 1, '', 1, 1, '2024-07-31 10:34:12', '2024-07-31 10:34:12', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (22, 13, '按钮', 'B', 'orange', 'menu_type', 100, 1, '', 1, 1, '2024-07-31 10:34:20', '2024-07-31 10:34:20', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (23, 13, '外链', 'L', 'blue', 'menu_type', 100, 1, '', 1, 1, '2024-07-31 10:34:27', '2024-07-31 10:34:27', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (24, 13, 'iFrame', 'I', 'cyan', 'menu_type', 100, 1, '', 1, 1, '2024-07-31 10:34:51', '2024-07-31 10:34:51', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (25, 14, '是', '1', 'green', 'yes_or_no', 100, 1, '', 1, 1, '2024-07-31 10:35:17', '2024-07-31 10:35:17', NULL);
-INSERT INTO `__PREFIX__system_dict_data` VALUES (26, 14, '否', '2', 'red', 'yes_or_no', 100, 1, '', 1, 1, '2024-07-31 10:35:22', '2024-07-31 10:35:22', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (2, 2, '本地存储', '1', 'green', 'upload_mode', 99, 1, NULL, 1, 2, '2021-06-27 13:33:43', '2025-04-28 21:23:38', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (3, 2, '阿里云OSS', '2', 'orange', 'upload_mode', 98, 1, NULL, 1, 2, '2021-06-27 13:33:55', '2025-04-28 21:25:13', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (4, 2, '七牛云', '3', 'cyan', 'upload_mode', 97, 1, NULL, 1, 1, '2021-06-27 13:34:07', '2025-03-28 19:35:25', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (5, 2, '腾讯云COS', '4', 'blue', 'upload_mode', 96, 1, NULL, 1, 1, '2021-06-27 13:34:19', '2025-03-28 19:35:25', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (6, 2, '亚马逊S3', '5', 'red', 'upload_mode', 95, 1, '', 1, 1, '2021-06-27 13:34:19', '2025-04-04 23:05:31', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (7, 3, '正常', '1', 'green', 'data_status', 0, 1, '1为正常', 1, 1, '2021-06-27 13:36:51', '2021-06-27 13:37:01', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (8, 3, '停用', '2', 'red', 'data_status', 0, 1, '2为停用', 1, 1, '2021-06-27 13:37:10', '2021-06-27 13:37:10', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (9, 4, '统计页面', 'statistics', 'green', 'dashboard', 0, 1, '管理员用', 1, 1, '2021-08-09 12:53:53', '2023-11-16 11:39:17', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (10, 4, '工作台', 'work', 'orange', 'dashboard', 0, 1, '员工使用', 1, 1, '2021-08-09 12:54:18', '2021-08-09 12:54:18', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (11, 5, '男', '1', 'green', 'gender', 0, 1, NULL, 1, 1, '2021-08-09 12:55:00', '2025-04-04 23:05:52', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (12, 5, '女', '2', 'red', 'gender', 0, 1, NULL, 1, 1, '2021-08-09 12:55:08', '2025-04-04 23:05:52', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (13, 5, '未知', '3', 'orange', 'gender', 0, 1, NULL, 1, 1, '2021-08-09 12:55:16', '2025-04-04 23:05:52', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (14, 7, '通知', '1', 'green', 'backend_notice_type', 2, 1, NULL, 1, 1, '2021-11-11 17:29:27', '2021-11-11 17:30:51', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (15, 7, '公告', '2', 'red', 'backend_notice_type', 1, 1, NULL, 1, 1, '2021-11-11 17:31:42', '2021-11-11 17:31:42', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (16, 12, '图片', 'image', 'green', 'attachment_type', 10, 1, NULL, 1, 1, '2022-03-17 14:49:59', '2022-03-17 14:49:59', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (17, 12, '文档', 'text', 'blue', 'attachment_type', 9, 1, NULL, 1, 1, '2022-03-17 14:50:20', '2022-03-17 14:50:49', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (18, 12, '音频', 'audio', 'cyan', 'attachment_type', 8, 1, NULL, 1, 1, '2022-03-17 14:50:37', '2022-03-17 14:50:52', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (19, 12, '视频', 'video', 'red', 'attachment_type', 7, 1, NULL, 1, 1, '2022-03-17 14:50:45', '2022-03-17 14:50:57', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (20, 12, '应用程序', 'application', 'orange', 'attachment_type', 6, 1, NULL, 1, 1, '2022-03-17 14:50:52', '2022-03-17 14:50:59', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (21, 13, '菜单', 'M', 'green', 'menu_type', 100, 1, '', 1, 1, '2024-07-31 10:34:12', '2024-07-31 10:34:12', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (22, 13, '按钮', 'B', 'orange', 'menu_type', 100, 1, '', 1, 1, '2024-07-31 10:34:20', '2024-07-31 10:34:20', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (23, 13, '外链', 'L', 'blue', 'menu_type', 100, 1, '', 1, 1, '2024-07-31 10:34:27', '2024-07-31 10:34:27', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (24, 13, 'iFrame', 'I', 'cyan', 'menu_type', 100, 1, '', 1, 1, '2024-07-31 10:34:51', '2024-07-31 10:34:51', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (25, 14, '是', '1', 'green', 'yes_or_no', 100, 1, '', 1, 1, '2024-07-31 10:35:17', '2024-07-31 10:35:17', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_data` VALUES (26, 14, '否', '2', 'red', 'yes_or_no', 100, 1, '', 1, 1, '2024-07-31 10:35:22', '2024-07-31 10:35:22', NULL);
 
 -- ----------------------------
--- Table structure for __PREFIX__system_dict_type
+-- Table structure for __PREFIX__admin_system_dict_type
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_dict_type`;
-CREATE TABLE `__PREFIX__system_dict_type`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_dict_type`;
+CREATE TABLE `__PREFIX__admin_system_dict_type`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `name` varchar(50) NULL DEFAULT NULL COMMENT '字典名称',
   `code` varchar(100) NULL DEFAULT NULL COMMENT '字典标示',
@@ -351,22 +351,22 @@ CREATE TABLE `__PREFIX__system_dict_type`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 17 COMMENT = '字典类型表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_dict_type
+-- Records of __PREFIX__admin_system_dict_type
 -- ----------------------------
-INSERT INTO `__PREFIX__system_dict_type` VALUES (2, '存储模式', 'upload_mode', 1, '上传文件存储模式', 1, 1, '2021-06-27 13:33:29', '2025-04-04 23:02:52', NULL);
-INSERT INTO `__PREFIX__system_dict_type` VALUES (3, '数据状态', 'data_status', 1, '通用数据状态', 1, 1, '2021-06-27 13:33:29', '2025-03-29 20:39:25', NULL);
-INSERT INTO `__PREFIX__system_dict_type` VALUES (4, '后台首页', 'dashboard', 1, NULL, 1, 1, '2021-06-27 13:33:29', '2023-11-16 11:28:17', NULL);
-INSERT INTO `__PREFIX__system_dict_type` VALUES (5, '性别', 'gender', 1, '', 1, 1, '2021-06-27 13:33:29', '2025-04-04 23:05:52', NULL);
-INSERT INTO `__PREFIX__system_dict_type` VALUES (7, '后台公告类型', 'backend_notice_type', 1, NULL, 1, 1, '2021-06-27 13:33:29', '2021-11-11 17:29:14', NULL);
-INSERT INTO `__PREFIX__system_dict_type` VALUES (12, '附件类型', 'attachment_type', 1, NULL, 1, 1, '2021-06-27 13:33:29', '2022-03-17 14:49:23', NULL);
-INSERT INTO `__PREFIX__system_dict_type` VALUES (13, '菜单类型', 'menu_type', 1, '', 1, 1, '2024-07-31 10:33:37', '2024-07-31 10:33:37', NULL);
-INSERT INTO `__PREFIX__system_dict_type` VALUES (14, '是否', 'yes_or_no', 1, '', 1, 1, '2024-07-31 10:35:07', '2024-07-31 10:35:07', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_type` VALUES (2, '存储模式', 'upload_mode', 1, '上传文件存储模式', 1, 1, '2021-06-27 13:33:29', '2025-04-04 23:02:52', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_type` VALUES (3, '数据状态', 'data_status', 1, '通用数据状态', 1, 1, '2021-06-27 13:33:29', '2025-03-29 20:39:25', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_type` VALUES (4, '后台首页', 'dashboard', 1, NULL, 1, 1, '2021-06-27 13:33:29', '2023-11-16 11:28:17', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_type` VALUES (5, '性别', 'gender', 1, '', 1, 1, '2021-06-27 13:33:29', '2025-04-04 23:05:52', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_type` VALUES (7, '后台公告类型', 'backend_notice_type', 1, NULL, 1, 1, '2021-06-27 13:33:29', '2021-11-11 17:29:14', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_type` VALUES (12, '附件类型', 'attachment_type', 1, NULL, 1, 1, '2021-06-27 13:33:29', '2022-03-17 14:49:23', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_type` VALUES (13, '菜单类型', 'menu_type', 1, '', 1, 1, '2024-07-31 10:33:37', '2024-07-31 10:33:37', NULL);
+INSERT INTO `__PREFIX__admin_system_dict_type` VALUES (14, '是否', 'yes_or_no', 1, '', 1, 1, '2024-07-31 10:35:07', '2024-07-31 10:35:07', NULL);
 
 -- ----------------------------
--- Table structure for __PREFIX__system_login_log
+-- Table structure for __PREFIX__admin_system_login_log
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_login_log`;
-CREATE TABLE `__PREFIX__system_login_log`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_login_log`;
+CREATE TABLE `__PREFIX__admin_system_login_log`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `username` varchar(20) NULL DEFAULT NULL COMMENT '用户名',
   `ip` varchar(45) NULL DEFAULT NULL COMMENT '登录IP地址',
@@ -387,14 +387,14 @@ CREATE TABLE `__PREFIX__system_login_log`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_login_log
+-- Records of __PREFIX__admin_system_login_log
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for __PREFIX__system_mail
+-- Table structure for __PREFIX__admin_system_mail
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_mail`;
-CREATE TABLE `__PREFIX__system_mail`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_mail`;
+CREATE TABLE `__PREFIX__admin_system_mail`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '编号',
   `gateway` varchar(50) NULL DEFAULT NULL COMMENT '网关',
   `from` varchar(50) NULL DEFAULT NULL COMMENT '发送人',
@@ -410,14 +410,14 @@ CREATE TABLE `__PREFIX__system_mail`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 COMMENT = '邮件记录' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_mail
+-- Records of __PREFIX__admin_system_mail
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for __PREFIX__system_menu
+-- Table structure for __PREFIX__admin_system_menu
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_menu`;
-CREATE TABLE `__PREFIX__system_menu`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_menu`;
+CREATE TABLE `__PREFIX__admin_system_menu`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `parent_id` int(11) UNSIGNED NULL DEFAULT NULL COMMENT '父ID',
   `level` varchar(500) NULL DEFAULT NULL COMMENT '组级集合',
@@ -444,115 +444,120 @@ CREATE TABLE `__PREFIX__system_menu`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 6000 COMMENT = '菜单信息表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_menu
+-- Records of __PREFIX__admin_system_menu
 -- ----------------------------
-INSERT INTO `__PREFIX__system_menu` VALUES (1000, 0, '0', '权限', 'permission', 'IconSafe', 'permission', '', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1100, 1000, '0,1000', '用户管理', 'permission/user', 'IconUserGroup', 'permission/user', 'system/user/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1101, 1100, '0,1000,1100', '用户列表', '/core/user/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1102, 1100, '0,1000,1100', '用户保存', '/core/user/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1103, 1100, '0,1000,1100', '用户更新', '/core/user/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1104, 1100, '0,1000,1100', '用户删除', '/core/user/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1105, 1100, '0,1000,1100', '用户读取', '/core/user/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1106, 1100, '0,1000,1100', '用户状态改变', '/core/user/changeStatus', '', NULL, '', NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1107, 1100, '0,1000,1100', '用户重置密码', '/core/user/initUserPassword', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1108, 1100, '0,1000,1100', '更新用户缓存', '/core/user/clearCache', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1109, 1100, '0,1000,1100', '设置用户首页', '/core/user/setHomePage', '', NULL, '', NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1200, 1000, '0,1000', '菜单管理', 'permission/menu', 'IconMenu', 'permission/menu', 'system/menu/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1201, 1200, '0,1000,1200', '菜单列表', '/core/menu/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1202, 1200, '0,1000,1200', '菜单保存', '/core/menu/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1203, 1200, '0,1000,1200', '菜单更新', '/core/menu/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1204, 1200, '0,1000,1200', '菜单删除', '/core/menu/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1205, 1200, '0,1000,1200', '菜单读取', '/core/menu/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1300, 1000, '0,1000', '部门管理', 'permission/dept', 'IconMindMapping', 'permission/dept', 'system/dept/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1301, 1300, '0,1000,1300', '部门列表', '/core/dept/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1302, 1300, '0,1000,1300', '部门保存', '/core/dept/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1303, 1300, '0,1000,1300', '部门更新', '/core/dept/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1304, 1300, '0,1000,1300', '部门删除', '/core/dept/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1305, 1300, '0,1000,1300', '部门读取', '/core/dept/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1306, 1300, '0,1000,1300', '部门领导', '/core/dept/leaders', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1400, 1000, '0,1000', '角色管理', 'permission/role', 'IconLock', 'permission/role', 'system/role/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1401, 1400, '0,1000,1400', '角色列表', '/core/role/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1402, 1400, '0,1000,1400', '角色保存', '/core/role/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1403, 1400, '0,1000,1400', '角色更新', '/core/role/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1404, 1400, '0,1000,1400', '角色删除', '/core/role/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1405, 1400, '0,1000,1400', '角色读取', '/core/role/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1406, 1400, '0,1000,1400', '角色菜单权限', '/core/role/menuPermission', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1500, 1000, '0,1000', '岗位管理', 'permission/post', 'IconTags', 'permission/post', 'system/post/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1501, 1500, '0,1000,1500', '岗位列表', '/core/post/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1502, 1500, '0,1000,1500', '岗位保存', '/core/post/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1503, 1500, '0,1000,1500', '岗位更新', '/core/post/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1504, 1500, '0,1000,1500', '岗位删除', '/core/post/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1505, 1500, '0,1000,1500', '岗位读取', '/core/post/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1506, 1500, '0,1000,1500', '岗位状态改变', '/core/post/changeStatus', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1507, 1500, '0,1000,1500', '岗位导入', '/core/post/import', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (1508, 1500, '0,1000,1500', '岗位导出', '/core/post/export', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2000, 0, '0', '数据', 'data', 'IconStorage', 'data', '', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2100, 2000, '0,2000', '数据字典', 'data/dict', 'IconBook', 'data/dict', 'system/dict/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2101, 2100, '0,2000,2100', '数据字典列表', '/core/dictType/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2102, 2100, '0,2000,2100', '数据字典保存', '/core/dictType/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2103, 2100, '0,2000,2100', '数据字典更新', '/core/dictType/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2104, 2100, '0,2000,2100', '数据字典删除', '/core/dictType/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2105, 2100, '0,2000,2100', '数据字典读取', '/core/dictType/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2106, 2100, '0,2000,2100', '字典状态改变', '/core/dictType/changeStatus', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2200, 2000, '0,2000', '附件管理', 'data/attachment', 'IconAttachment', 'data/attachment', 'system/attachment/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2201, 2200, '0,2000,2200', '附件删除', '/core/attachment/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2202, 2200, '0,2000,2200', '附件列表', '/core/attachment/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2300, 2000, '0,2000', '数据表维护', 'data/database', 'IconNav', 'data/database', 'system/database/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2301, 2300, '0,2000,2300', '数据表列表', '/core/database/index', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2302, 2300, '0,2000,2300', '数据表详细', '/core/database/detailed', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2303, 2300, '0,2000,2300', '数据表清理碎片', '/core/database/fragment', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2304, 2300, '0,2000,2300', '数据表优化', '/core/database/optimize', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2305, 2300, '0,2000,2300', '数据回收站', '/core/database/recycle', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2306, 2300, '0,2000,2300', '数据销毁', '/core/database/delete', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2307, 2300, '0,2000,2300', '数据恢复', '/core/database/recovery', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2700, 2000, '0,2000', '系统公告', 'data/notice', 'IconNotification', 'data/notice', 'system/notice/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2701, 2700, '0,2000,2700', '系统公告列表', '/core/notice/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2702, 2700, '0,2000,2700', '系统公告保存', '/core/notice/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2703, 2700, '0,2000,2700', '系统公告更新', '/core/notice/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2704, 2700, '0,2000,2700', '系统公告删除', '/core/notice/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (2705, 2700, '0,2000,2700', '系统公告读取', '/core/notice/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3000, 0, '0', '监控', 'monitor', 'IconComputer', 'monitor', '', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3200, 3000, '0,3000', '服务监控', 'monitor/server', 'IconDashboard', 'monitor/server', 'system/monitor/server/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3300, 3000, '0,3000', '日志监控', 'monitor/logs', 'IconRobot', 'monitor/logs', '', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3400, 3300, '0,3000,3300', '登录日志', 'monitor/logs/loginLog', 'IconImport', 'monitor/logs/loginLog', 'system/logs/loginLog', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3401, 3400, '0,3000,3300,3400', '登录日志列表', '/core/logs/getLoginLogPageList', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3402, 3400, '0,3000,3200,3300', '登录日志删除', '/core/logs/deleteOperLog', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3500, 3300, '0,3000,3300', '操作日志', 'monitor/logs/operLog', 'IconInfoCircle', 'monitor/logs/operLog', 'system/logs/operLog', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3501, 3500, '0,3000,3300,3500', '操作日志列表', '/core/logs/getOperLogPageList', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3502, 3500, '0,3000,3200,3500', '操作日志删除', '/core/logs/deleteOperLog', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3600, 3000, '0,3000', '邮件记录', 'monitor/emailLog', 'IconEmail', 'monitor/emailLog', 'system/logs/emailLog', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3601, 3600, '0,3000,3600', '邮件记录删除', '/core/email/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3602, 3600, '0,3000,3600', '邮件记录列表', '/core/email/index', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (3700, 3200, '0,3000,3200', '服务监控列表', '/core/system/monitor', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4000, 0, '0', '工具', 'tool', 'IconTool', 'tool', '', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4100, 4000, '0,4000', '代码生成器', 'tool/code', 'IconCodeSquare', 'tool/code', 'tool/code/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4101, 4100, '0,4000,4100', '代码生成列表', '/tool/code/index', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4102, 4100, '0,4000,4100', '功能操作', '/tool/code/access', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4200, 4000, '0,4000', '定时任务', 'tool/crontab', 'IconSchedule', 'tool/crontab', 'tool/crontab/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4201, 4200, '0,4000,4200', '定时任务列表', '/tool/crontab/index', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4202, 4200, '0,4000,4200', '定时任务保存', '/tool/crontab/save', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4203, 4200, '0,4000,4200', '定时任务更新', '/tool/crontab/update', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4204, 4200, '0,4000,4200', '定时任务删除', '/tool/crontab/destroy', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4205, 4200, '0,4000,4200', '定时任务读取', '/tool/crontab/read', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4206, 4200, '0,4000,4200', '定时任务状态修改', '/tool/crontab/changeStatus', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4207, 4200, '0,4000,4200', '定时任务执行', '/tool/crontab/run', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4208, 4200, '0,4000,4200', '定时任务日志删除', '/tool/crontab/deleteLog', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (4300, 4000, '0,4000', '插件安装', 'tool/install', 'IconUpload', 'tool/install', 'tool/install/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (5000, 0, '0', '系统设置', 'config', 'IconSettings', 'config', 'system/config/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (5001, 5000, '0,5000', '配置列表', '/core/config/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (5002, 5000, '0,5000', '新增配置 ', '/core/config/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (5003, 5000, '0,5000', '更新配置', '/core/config/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (5004, 5000, '0,5000', '删除配置', '/core/config/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (5005, 5000, '0,5000', '配置读取', '/core/config/read', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (5100, 0, '0', '附加数据', 'addition', 'IconRelation', 'addition', '', NULL, 1, 1, 'M', 0, NULL, 2, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (5101, 5100, '0,5100', '用户列表接口', '/core/system/getUserList', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
-INSERT INTO `__PREFIX__system_menu` VALUES (5102, 5100, '0,5100', '用户信息接口', '/core/system/getUserInfoByIds', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1000, 0, '0', '权限', 'permission', 'IconSafe', 'permission', '', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1100, 1000, '0,1000', '用户管理', 'permission/user', 'IconUserGroup', 'permission/user', 'system/user/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1101, 1100, '0,1000,1100', '用户列表', '/core/user/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1101, 1100, '0,1000,1100', '用户列表', '/core/user/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1101, 1100, '0,1000,1100', '用户列表', '/core/user/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1101, 1100, '0,1000,1100', '用户列表', '/core/user/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1101, 1100, '0,1000,1100', '用户列表', '/core/user/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1101, 1100, '0,1000,1100', '用户列表', '/core/user/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1102, 1100, '0,1000,1100', '用户保存', '/core/user/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1103, 1100, '0,1000,1100', '用户更新', '/core/user/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1104, 1100, '0,1000,1100', '用户删除', '/core/user/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1105, 1100, '0,1000,1100', '用户读取', '/core/user/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1106, 1100, '0,1000,1100', '用户状态改变', '/core/user/changeStatus', '', NULL, '', NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1107, 1100, '0,1000,1100', '用户重置密码', '/core/user/initUserPassword', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1108, 1100, '0,1000,1100', '更新用户缓存', '/core/user/clearCache', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1109, 1100, '0,1000,1100', '设置用户首页', '/core/user/setHomePage', '', NULL, '', NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1200, 1000, '0,1000', '菜单管理', 'permission/menu', 'IconMenu', 'permission/menu', 'system/menu/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1201, 1200, '0,1000,1200', '菜单列表', '/core/menu/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1202, 1200, '0,1000,1200', '菜单保存', '/core/menu/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1203, 1200, '0,1000,1200', '菜单更新', '/core/menu/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1204, 1200, '0,1000,1200', '菜单删除', '/core/menu/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1205, 1200, '0,1000,1200', '菜单读取', '/core/menu/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1300, 1000, '0,1000', '部门管理', 'permission/dept', 'IconMindMapping', 'permission/dept', 'system/dept/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1301, 1300, '0,1000,1300', '部门列表', '/core/dept/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1302, 1300, '0,1000,1300', '部门保存', '/core/dept/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1303, 1300, '0,1000,1300', '部门更新', '/core/dept/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1304, 1300, '0,1000,1300', '部门删除', '/core/dept/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1305, 1300, '0,1000,1300', '部门读取', '/core/dept/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1306, 1300, '0,1000,1300', '部门领导', '/core/dept/leaders', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1400, 1000, '0,1000', '角色管理', 'permission/role', 'IconLock', 'permission/role', 'system/role/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1401, 1400, '0,1000,1400', '角色列表', '/core/role/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1402, 1400, '0,1000,1400', '角色保存', '/core/role/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1403, 1400, '0,1000,1400', '角色更新', '/core/role/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1404, 1400, '0,1000,1400', '角色删除', '/core/role/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1405, 1400, '0,1000,1400', '角色读取', '/core/role/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1406, 1400, '0,1000,1400', '角色菜单权限', '/core/role/menuPermission', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1500, 1000, '0,1000', '岗位管理', 'permission/post', 'IconTags', 'permission/post', 'system/post/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1501, 1500, '0,1000,1500', '岗位列表', '/core/post/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1502, 1500, '0,1000,1500', '岗位保存', '/core/post/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1503, 1500, '0,1000,1500', '岗位更新', '/core/post/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1504, 1500, '0,1000,1500', '岗位删除', '/core/post/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1505, 1500, '0,1000,1500', '岗位读取', '/core/post/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1506, 1500, '0,1000,1500', '岗位状态改变', '/core/post/changeStatus', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1507, 1500, '0,1000,1500', '岗位导入', '/core/post/import', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (1508, 1500, '0,1000,1500', '岗位导出', '/core/post/export', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2000, 0, '0', '数据', 'data', 'IconStorage', 'data', '', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2100, 2000, '0,2000', '数据字典', 'data/dict', 'IconBook', 'data/dict', 'system/dict/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2101, 2100, '0,2000,2100', '数据字典列表', '/core/dictType/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2102, 2100, '0,2000,2100', '数据字典保存', '/core/dictType/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2103, 2100, '0,2000,2100', '数据字典更新', '/core/dictType/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2104, 2100, '0,2000,2100', '数据字典删除', '/core/dictType/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2105, 2100, '0,2000,2100', '数据字典读取', '/core/dictType/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2106, 2100, '0,2000,2100', '字典状态改变', '/core/dictType/changeStatus', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2200, 2000, '0,2000', '附件管理', 'data/attachment', 'IconAttachment', 'data/attachment', 'system/attachment/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2201, 2200, '0,2000,2200', '附件删除', '/core/attachment/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2202, 2200, '0,2000,2200', '附件列表', '/core/attachment/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2300, 2000, '0,2000', '数据表维护', 'data/database', 'IconNav', 'data/database', 'system/database/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2301, 2300, '0,2000,2300', '数据表列表', '/core/database/index', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2302, 2300, '0,2000,2300', '数据表详细', '/core/database/detailed', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2303, 2300, '0,2000,2300', '数据表清理碎片', '/core/database/fragment', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2304, 2300, '0,2000,2300', '数据表优化', '/core/database/optimize', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2305, 2300, '0,2000,2300', '数据回收站', '/core/database/recycle', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2306, 2300, '0,2000,2300', '数据销毁', '/core/database/delete', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2307, 2300, '0,2000,2300', '数据恢复', '/core/database/recovery', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2700, 2000, '0,2000', '系统公告', 'data/notice', 'IconNotification', 'data/notice', 'system/notice/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2701, 2700, '0,2000,2700', '系统公告列表', '/core/notice/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2702, 2700, '0,2000,2700', '系统公告保存', '/core/notice/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2703, 2700, '0,2000,2700', '系统公告更新', '/core/notice/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2704, 2700, '0,2000,2700', '系统公告删除', '/core/notice/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (2705, 2700, '0,2000,2700', '系统公告读取', '/core/notice/read', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3000, 0, '0', '监控', 'monitor', 'IconComputer', 'monitor', '', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3200, 3000, '0,3000', '服务监控', 'monitor/server', 'IconDashboard', 'monitor/server', 'system/monitor/server/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3300, 3000, '0,3000', '日志监控', 'monitor/logs', 'IconRobot', 'monitor/logs', '', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3400, 3300, '0,3000,3300', '登录日志', 'monitor/logs/loginLog', 'IconImport', 'monitor/logs/loginLog', 'system/logs/loginLog', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3401, 3400, '0,3000,3300,3400', '登录日志列表', '/core/logs/getLoginLogPageList', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3402, 3400, '0,3000,3200,3300', '登录日志删除', '/core/logs/deleteOperLog', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3500, 3300, '0,3000,3300', '操作日志', 'monitor/logs/operLog', 'IconInfoCircle', 'monitor/logs/operLog', 'system/logs/operLog', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3501, 3500, '0,3000,3300,3500', '操作日志列表', '/core/logs/getOperLogPageList', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3502, 3500, '0,3000,3200,3500', '操作日志删除', '/core/logs/deleteOperLog', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3600, 3000, '0,3000', '邮件记录', 'monitor/emailLog', 'IconEmail', 'monitor/emailLog', 'system/logs/emailLog', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3601, 3600, '0,3000,3600', '邮件记录删除', '/core/email/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3602, 3600, '0,3000,3600', '邮件记录列表', '/core/email/index', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (3700, 3200, '0,3000,3200', '服务监控列表', '/core/system/monitor', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4000, 0, '0', '工具', 'tool', 'IconTool', 'tool', '', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4100, 4000, '0,4000', '代码生成器', 'tool/code', 'IconCodeSquare', 'tool/code', 'tool/code/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4101, 4100, '0,4000,4100', '代码生成列表', '/tool/code/index', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4102, 4100, '0,4000,4100', '功能操作', '/tool/code/access', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4200, 4000, '0,4000', '定时任务', 'tool/crontab', 'IconSchedule', 'tool/crontab', 'tool/crontab/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4201, 4200, '0,4000,4200', '定时任务列表', '/tool/crontab/index', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4202, 4200, '0,4000,4200', '定时任务保存', '/tool/crontab/save', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4203, 4200, '0,4000,4200', '定时任务更新', '/tool/crontab/update', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4204, 4200, '0,4000,4200', '定时任务删除', '/tool/crontab/destroy', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4205, 4200, '0,4000,4200', '定时任务读取', '/tool/crontab/read', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4206, 4200, '0,4000,4200', '定时任务状态修改', '/tool/crontab/changeStatus', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4207, 4200, '0,4000,4200', '定时任务执行', '/tool/crontab/run', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4208, 4200, '0,4000,4200', '定时任务日志删除', '/tool/crontab/deleteLog', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (4300, 4000, '0,4000', '插件安装', 'tool/install', 'IconUpload', 'tool/install', 'tool/install/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (5000, 0, '0', '系统设置', 'config', 'IconSettings', 'config', 'system/config/index', NULL, 2, 1, 'M', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (5001, 5000, '0,5000', '配置列表', '/core/config/index', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (5002, 5000, '0,5000', '新增配置 ', '/core/config/save', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (5003, 5000, '0,5000', '更新配置', '/core/config/update', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (5004, 5000, '0,5000', '删除配置', '/core/config/destroy', NULL, NULL, NULL, NULL, 2, 1, 'B', 0, NULL, 1, 0, NULL, 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (5005, 5000, '0,5000', '配置读取', '/core/config/read', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (5100, 0, '0', '附加数据', 'addition', 'IconRelation', 'addition', '', NULL, 1, 1, 'M', 0, NULL, 2, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (5101, 5100, '0,5100', '用户列表接口', '/core/system/getUserList', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
+INSERT INTO `__PREFIX__admin_system_menu` VALUES (5102, 5100, '0,5100', '用户信息接口', '/core/system/getUserInfoByIds', '', '', '', NULL, 2, 1, 'B', 0, NULL, 1, 0, '', 1, 1, '2025-04-30 13:56:46', '2025-04-30 13:56:46', NULL);
 
 -- ----------------------------
--- Table structure for __PREFIX__system_notice
+-- Table structure for __PREFIX__admin_system_notice
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_notice`;
-CREATE TABLE `__PREFIX__system_notice`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_notice`;
+CREATE TABLE `__PREFIX__admin_system_notice`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `message_id` int(11) NULL DEFAULT NULL COMMENT '消息ID',
   `title` varchar(255) NULL DEFAULT NULL COMMENT '标题',
@@ -570,15 +575,15 @@ CREATE TABLE `__PREFIX__system_notice`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 COMMENT = '系统公告表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_notice
+-- Records of __PREFIX__admin_system_notice
 -- ----------------------------
-INSERT INTO `__PREFIX__system_notice` VALUES (1, NULL, '欢迎使用SaiAdmin', 1, '<p>saiadmin是一款基于vue3 + webman 的极速开发框架，前端开发采用JavaScript，后端采用PHP</p>', 0, '', 1, 1, '2024-01-20 15:55:36', '2025-04-04 23:27:30', NULL);
+INSERT INTO `__PREFIX__admin_system_notice` VALUES (1, NULL, '欢迎使用SaiAdmin', 1, '<p>saiadmin是一款基于vue3 + webman 的极速开发框架，前端开发采用JavaScript，后端采用PHP</p>', 0, '', 1, 1, '2024-01-20 15:55:36', '2025-04-04 23:27:30', NULL);
 
 -- ----------------------------
--- Table structure for __PREFIX__system_oper_log
+-- Table structure for __PREFIX__admin_system_oper_log
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_oper_log`;
-CREATE TABLE `__PREFIX__system_oper_log`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_oper_log`;
+CREATE TABLE `__PREFIX__admin_system_oper_log`  (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `username` varchar(20) NULL DEFAULT NULL COMMENT '用户名',
   `app` varchar(50) NULL DEFAULT NULL COMMENT '应用名称',
@@ -599,14 +604,14 @@ CREATE TABLE `__PREFIX__system_oper_log`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 8 COMMENT = '操作日志表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_oper_log
+-- Records of __PREFIX__admin_system_oper_log
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for __PREFIX__system_post
+-- Table structure for __PREFIX__admin_system_post
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__system_post`;
-CREATE TABLE `__PREFIX__system_post`  (
+DROP TABLE IF EXISTS `__PREFIX__admin_system_post`;
+CREATE TABLE `__PREFIX__admin_system_post`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `name` varchar(50) NULL DEFAULT NULL COMMENT '岗位名称',
   `code` varchar(100) NULL DEFAULT NULL COMMENT '岗位代码',
@@ -622,10 +627,10 @@ CREATE TABLE `__PREFIX__system_post`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 COMMENT = '岗位信息表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __PREFIX__system_post
+-- Records of __PREFIX__admin_system_post
 -- ----------------------------
-INSERT INTO `__PREFIX__system_post` VALUES (1, '司机岗', 'driver', 100, 1, '', 1, 1, '2025-04-27 23:34:06', '2025-04-28 11:14:44', NULL);
-INSERT INTO `__PREFIX__system_post` VALUES (2, '保安岗', 'security', 100, 1, NULL, 1, 1, '2025-04-27 23:34:06', '2025-04-28 11:14:44', NULL);
+INSERT INTO `__PREFIX__admin_system_post` VALUES (1, '司机岗', 'driver', 100, 1, '', 1, 1, '2025-04-27 23:34:06', '2025-04-28 11:14:44', NULL);
+INSERT INTO `__PREFIX__admin_system_post` VALUES (2, '保安岗', 'security', 100, 1, NULL, 1, 1, '2025-04-27 23:34:06', '2025-04-28 11:14:44', NULL);
 
 -- ----------------------------
 -- Table structure for __PREFIX__admin_system_role
