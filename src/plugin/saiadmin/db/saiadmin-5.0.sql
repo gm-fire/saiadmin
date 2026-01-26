@@ -772,9 +772,9 @@ CREATE TABLE `__PREFIX__admin_system_user_role`  (
 INSERT INTO `__PREFIX__admin_system_user_role` VALUES (1, 1, 1);
 
 -- ----------------------------
--- Table structure for __PREFIX__tool_crontab
+-- Table structure for __PREFIX__admin_tool_crontab
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__tool_crontab`;
+DROP TABLE IF EXISTS `__PREFIX__admin_tool_crontab`;
 CREATE TABLE `__PREFIX__tool_crontab`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `name` varchar(100) NULL DEFAULT NULL COMMENT '任务名称',
@@ -802,9 +802,9 @@ INSERT INTO `__PREFIX__tool_crontab` VALUES (2, '登录gitee', 2, 'https://gitee
 INSERT INTO `__PREFIX__tool_crontab` VALUES (3, '定时执行任务', 3, '\\plugin\\saiadmin\\process\\Test', '{\"type\":\"1\"}', 1, '0 30 12 * * *', 2, 1, '', 1, 1, '2024-01-20 14:38:03', '2025-04-28 00:09:30', NULL);
 
 -- ----------------------------
--- Table structure for __PREFIX__tool_crontab_log
+-- Table structure for __PREFIX__admin_tool_crontab_log
 -- ----------------------------
-DROP TABLE IF EXISTS `__PREFIX__tool_crontab_log`;
+DROP TABLE IF EXISTS `__PREFIX__admin_tool_crontab_log`;
 CREATE TABLE `__PREFIX__tool_crontab_log`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `crontab_id` int(11) UNSIGNED NULL DEFAULT NULL COMMENT '任务ID',

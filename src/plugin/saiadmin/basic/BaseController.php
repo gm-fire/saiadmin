@@ -151,6 +151,24 @@ class BaseController extends OpenController
     }
 
     /**
+     * 修改状态
+     * @param Request $request
+     * @return Response
+     */
+    public function changeStatus(Request $request): Response
+    {
+        $id = $request->input('id', '');
+        $status = $request->input('status', 1);
+        $result = $this->logic->where('id', $id)->update(['status' => $status]);
+        if ($result) {
+            $this->afterChange('changeStatus', $id);
+            return $this->success('操作成功');
+        } else {
+            return $this->fail('操作失败');
+        }
+    }
+
+    /**
      * 删除数据
      * @param Request $request
      * @return Response

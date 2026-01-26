@@ -8,8 +8,6 @@ namespace plugin\saiadmin\app\logic\system;
 
 use plugin\saiadmin\app\model\system\SystemLoginLog;
 use plugin\saiadmin\basic\BaseLogic;
-use plugin\saiadmin\utils\Helper;
-use think\facade\Db;
 
 /**
  * 登录日志逻辑层
@@ -30,28 +28,26 @@ class SystemLoginLogLogic extends BaseLogic
      */
     public function loginChart(): array
     {
-        // 获取表名（包含前缀）
-        $tableName = (new SystemLoginLog())->getTable();
+        $dates = [];
+        for ($i = 9; $i >= 0; $i--) {
+            $dates[] = date('Y-m-d', strtotime("-$i days"));
+        }
+
+        $placeholders = implode(',', array_fill(0, count($dates), '?'));
+        $data = $this->model->whereRaw("DATE(login_time) IN ($placeholders)", $dates)
+            ->field('DATE(login_time) as login_date, COUNT(*) as login_count')
+            ->group('DATE(login_time)')
+            ->order('login_date', 'ASC')
+            ->select()
+            ->toArray();
+
+        $dataMap = array_column($data, 'login_count', 'login_date');
         
-        $sql = "
-            SELECT
-                d.date AS login_date,
-                COUNT(l.login_time) AS login_count
-            FROM
-                (SELECT CURDATE() - INTERVAL (a.N) DAY AS date
-                 FROM (SELECT 0 AS N UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3
-                       UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6
-                       UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) a
-                 ) d
-            LEFT JOIN {$tableName} l
-                ON DATE(l.login_time) = d.date
-            GROUP BY d.date
-            ORDER BY d.date ASC;
-        ";
-        $data = Db::query($sql);
         return [
-            'login_count' => array_column($data, 'login_count'),
-            'login_date'  => array_column($data, 'login_date'),
+            'login_count' => array_map(function($date) use ($dataMap) {
+                return $dataMap[$date] ?? 0;
+            }, $dates),
+            'login_date'  => $dates,
         ];
     }
 

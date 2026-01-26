@@ -50,7 +50,7 @@ class BaseLogic
      * 排序方式
      * @var string
      */
-    protected string $orderType = 'ASC';
+    protected string $orderType = 'DESC';
 
     /**
      * 初始化
